@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="row navbar-items">
           <div className="item navbar-logo">
             <div className="content">
-              <Link href="/">Australian Football</Link>
+              <Link href="/">Nobel-Prize Catalog</Link>
             </div>
           </div>
           <div className="item navbar-menu">
