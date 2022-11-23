@@ -1,10 +1,8 @@
 export default function Intro({ changeHandler }) {
     return (
         <div className="row">
-            <div className="item intro">
-                <div className="content">
-                    <strong className="prolog">This is an app to search for nobel prize laureates and some information about them :)</strong>
-                </div>
+            <div className="content">
+                <strong>This is an app to search for nobel prize laureates and some information about them :)</strong>
             </div>
             <div className="item intro">
                 <div className="row">

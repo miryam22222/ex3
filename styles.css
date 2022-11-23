@@ -4,9 +4,12 @@
     "Helvetica Neue",
     "Helvetica",
     "Arial",
+    "Cursive",
     sans-serif;
   --deep-blue: rgb(49, 11, 218);
-  --deep-red: rgb(239, 6, 72);
+  --red: rgb(229, 54, 75);
+  --deep-red: rgb(169, 13, 31);
+  --dark-red: rgb(94, 6, 16);
   --white: #fbfafa;
   --charcoal: rgb(45, 43, 43);
   --layout-guide-item: rgba(255, 89, 0, 0.975);
@@ -14,20 +17,32 @@
 }
 
 /* start design helpers */
+.content {
+  border: 1px dotted var(--layout-guide-content);
+}
 
 .item {
   border: 1px dotted var(--layout-guide-item);
 }
 
-.content {
-  border: 1px dotted var(--layout-guide-content);
-}
-
-.card-content {
+.flip-card-content {
   border: 1px solid var(--layout-guide-content);
 }
-
 /* end design helpers */
+
+.item {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-basis: 100%;
+}
+
+.content {
+  flex-grow: 0;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 10px;
+}
 
 .container {
   width: 100%;
@@ -49,17 +64,73 @@
   flex-grow: 0;
   flex-basis: 100%;
   box-sizing: border-box;
+  margin: 5px;
   padding: 10px;
 }
 
+
+.flip-card {
+  background-color: #FCF6F5FF;
+  color: #2d2c2c;
+  border-radius: 25px;  
+  /* width: 300px; */
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  border-radius: 25px;  
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  color: #2d2c2c;
+  transform: rotateY(180deg);
+}
+
 /* adjustments for medium screens, like some tablets or landscape on a mobile */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .item.control-container {
+    flex-basis: 50%;
+  }
+
+  .item.control {
+    flex-basis: 50%;
+  }
+}
 
 /* adjustments for medium-large screens, like some tablets */
 @media (min-width: 768px) {
 
   .item.navbar-logo,
   .item.navbar-menu {
+    flex-basis: 50%;
+  }
+
+  .item.flip-card {
+    flex-basis: 50%;
+  }
+
+  .item.intro{
     flex-basis: 50%;
   }
 }
@@ -71,13 +142,19 @@
     margin: 0 auto;
   }
 
+  .item.flip-card{
+    flex-basis: 33.33%;
+  }
 }
 
 body {
-  font-family: var(--font-family);
+  /* font-family: var(--font-family); */
   margin: 0;
   padding: 0;
-  color: var(--charcoal);
+  /* color: var(--charcoal); */
+  background-color: var(--red);
+  color: #FCF6F5FF;
+  font-family: Cursive;
 }
 
 a {
@@ -113,9 +190,9 @@ form>* {
 
 #navbar {
   display: flex;
-  background-color: var(--deep-blue);
+  background-color: var(--deep-red);
   color: var(--white);
-  border-bottom: 4px solid var(--deep-red);
+  border-bottom: 4px solid var(--dark-red);
 }
 
 #navbar a {
@@ -151,8 +228,8 @@ form>* {
 #footer {
   display: flex;
   margin-top: auto;
-  background-color: var(--deep-blue);
+  background-color: var(--deep-red);
   color: var(--white);
   height: 200px;
-  border-top: 4px solid var(--deep-red);
+  border-top: 4px solid var(--dark-red);
 }
