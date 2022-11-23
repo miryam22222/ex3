@@ -18,7 +18,7 @@ export default function Laureate({ laureate }) {
                         <div className="item card-gender-year">
                         {/* <Image alt="gender" src={`${laureate.gender}.png`} className="content" width="30" height="30"/> */}
                         {/* <Image alt="gender" src={`${IMAGE_BASE_GENDER}${laureate.gender}.png`} className="content" width="30" height="30"/> */}
-                        <Image alt="gender" src="/male.png" className="content" width="40" height="40"/>
+                        {/* <Image alt="gender" src="/male.png" className="content" width="40" height="40"/> */}
                         <p className="year">{`${laureate.year}`}</p>
                         </div>
                     </div>
