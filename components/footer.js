@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="row">
           <div className="item">
             <div className="content">
-              &copy; 2022 Miryam's Nobel Prize Laureates coolest website!
+              &copy; 2022 Miryam-s Nobel Prize Laureates coolest website!
             </div>
           </div>
         </div>
