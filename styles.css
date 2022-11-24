@@ -17,7 +17,7 @@
 }
 
 /* start design helpers */
-.content {
+/* .content {
   border: 1px dotted var(--layout-guide-content);
 }
 
@@ -27,7 +27,7 @@
 
 .flip-card-content {
   border: 1px solid var(--layout-guide-content);
-}
+} */
 /* end design helpers */
 
 .item {
