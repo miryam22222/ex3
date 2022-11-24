@@ -4,14 +4,14 @@ import Intro from "../components/intro";
 import Message from "../components/message";
 import LaureateList from "../components/laureate-list";
 import { useLaureatesData } from "../hooks/data";
-import { extractData, filterCategoryData, filterGenderData, sortData } from "./utils";
+import { extractData, filterCategoryData, filterGenderData, sortData } from "../utils";
 
 // Our main page. Here we are loading data "on the client"
 // And showing some loading screen(s) while waiting for the data to be ready
 export default function IndexPage() {
 
   const { data, isLoading, isError } = useLaureatesData();
-  const [sortKey, setSortKey] = useState("---");
+  const [sortKey, setSortKey] = useState("name");
   const [categoryFilterKey, setCategoryFilterKey] = useState("---");
   const [genderFilterKey, setGenderFilterKey] = useState("---");
 

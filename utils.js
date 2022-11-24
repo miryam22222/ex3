@@ -1,4 +1,4 @@
-function checkCountry(item) {
+export function checkCountry(item) {
   let country = null;
      try {
       country = item.birth.place.country.en;
@@ -30,8 +30,7 @@ export function extractData(rawData) {
 }
 
 export function sortData(laureates, key) {
-  console.log("***start sorting by: " + key);
-const sorted = laureates.sort((a, b) => {
+  const sorted = laureates.sort((a, b) => {
     if (key === "name") {
         return a.fullName > b.fullName ? 1 : -1 ;
       } 
